@@ -1,0 +1,1 @@
+bin/go-websockproxy --cert-file=server.pem --key-file=server.key --mac-prefix="00:bb" --auth-key="abcdefg" 

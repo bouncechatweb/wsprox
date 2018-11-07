@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Networking - KVM</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Networking","wgTitle":"Networking","wgCurRevisionId":173789,"wgRevisionId":173789,"wgArticleId":1444,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Networking","wgRelevantArticleId":1444,"wgIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits"]);
+} );</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.bootstrap.styles&amp;only=styles&amp;skin=chameleon"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=chameleon"/>
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=chameleon"></script>
+<meta name="generator" content="MediaWiki 1.26.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/index.php?title=Networking&amp;action=edit"/>
+<link rel="edit" title="Edit" href="/index.php?title=Networking&amp;action=edit"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="KVM (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://www.linux-kvm.org/api.php?action=rsd"/>
+<link rel="copyright" href="https://www.gnu.org/copyleft/fdl.html"/>
+<link rel="alternate" type="application/atom+xml" title="KVM Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Networking layout-kvmlayout skin-chameleon action-view">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="row">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<!-- logo and main page link -->
+				<div id="p-logo" class="p-logo" role="banner">
+					<a href="/page/Main_Page" title="Visit the main page"><img src="/kvmless/kvmbanner-logo3.png" alt="KVM"/></a>
+				</div>
+
+			</div>
+			<div class="col-lg-9">
+				<div class="row">
+					<div class="col-lg-12">
+						<!-- personal tools -->
+						<div class="p-personal pull-right" id="p-personal" >
+							<ul class="p-personal-tools list-inline pull-right" >
+								<li id="pt-createaccount"><a href="/index.php?title=Special:UserLogin&amp;returnto=Networking&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+								<li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Networking" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+							</ul>
+						</div>
+
+						<div class="newtalk-notifier pull-right">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<!-- search form -->
+						<div  id="p-search" class="p-search pull-right" role="search">
+							<form  id="searchform" class="mw-search form-inline" action="/index.php">
+								<input type="hidden" name="title" value="Special:Search" />
+								<div class="input-group">
+									<input name="search" placeholder="Search" title="Search KVM [f]" accesskey="f" id="searchInput" class="form-control"/>
+									<div class="input-group-btn">
+										<button value="Go" id="searchGoButton" name="go" title="Go to a page with this exact name if it exists" type="submit" class="searchGoButton btn btn-default"><span class="glyphicon glyphicon-share-alt"></span></button>
+										<button value="Search" id="mw-searchButton" name="fulltext" title="Search the pages for this text" type="submit" class="mw-searchButton btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- navigation bar -->
+				<nav class="navbar navbar-default p-navbar" role="navigation" id="mw-navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mw-navigation-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+							</button>
+
+
+						</div>
+
+						<div class="collapse navbar-collapse" id="mw-navigation-collapse"><ul class="nav navbar-nav">
+							<!-- navigation -->
+							<li id="n-Home"><a href="/page/Main_Page">Home</a></li>
+							<!-- Status and Features -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Status and Features <b class="caret"></b></a>
+								
+								<ul class="dropdown-menu p-Status and Features" id="p-Status and Features">
+										<li id="n-Status"><a href="/page/Host_Support_Status">Status</a></li>
+										<li id="n-Guest-Support-Status"><a href="/page/Guest_Support_Status">Guest Support Status</a></li>
+										<li id="n-Management-Tools"><a href="/page/Management_Tools">Management Tools</a></li>
+										<li id="n-KVM-Features"><a href="/page/KVM_Features">KVM Features</a></li>
+										<li id="n-Migration"><a href="/page/Migration">Migration</a></li>
+								</ul>
+							</li>
+							<!-- Develop -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Develop <b class="caret"></b></a>
+								
+								<ul class="dropdown-menu p-Develop" id="p-Develop">
+										<li id="n-Mailing-Lists.2FIRC"><a href="/page/Lists,_IRC">Mailing Lists/IRC</a></li>
+										<li id="n-Bugs"><a href="/page/Bugs">Bugs</a></li>
+										<li id="n-Code"><a href="/page/Code">Code</a></li>
+										<li id="n-TODO"><a href="/page/TODO">TODO</a></li>
+										<li id="n-Avocado"><a href="/page/Avocado">Avocado</a></li>
+								</ul>
+							</li>
+							<!-- Conferences -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conferences <b class="caret"></b></a>
+								
+								<ul class="dropdown-menu p-Conferences" id="p-Conferences">
+										<li id="n-KVM-Forum"><a href="/page/KVM_Forum">KVM Forum</a></li>
+										<li id="n-All-Conferences"><a href="/page/Category:Conferences">All Conferences</a></li>
+								</ul>
+							</li>
+							<!-- About -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+								
+								<ul class="dropdown-menu p-About" id="p-About">
+										<li id="n-HOWTO"><a href="/page/HOWTO">HOWTO</a></li>
+										<li id="n-Documents"><a href="/page/Documents">Documents</a></li>
+										<li id="n-Downloads"><a href="/page/Downloads">Downloads</a></li>
+										<li id="n-Book-.22qemu-kvm-.26-libvirt.22"><a href="http://qemu-buch.de" rel="nofollow">Book &quot;qemu-kvm &amp; libvirt&quot;</a></li>
+										<li id="n-FAQ"><a href="/page/FAQ">FAQ</a></li>
+								</ul>
+							</li></ul>
+
+						</div><!-- /.navbar-collapse -->
+					</div>
+				</nav>
+
+			</div>
+			<div class="col-lg-12">
+					<!-- Content navigation -->
+					<ul class="p-contentnavigation pull-right list-inline text-center" id="p-contentnavigation">
+						<!-- namespaces -->
+						<li id="p-namespaces">
+							<ul class="list-inline" >
+								<li id="ca-talk"><a href="/page/Talk:Networking" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+							</ul>
+						</li>
+						<!-- views -->
+						<li id="p-views">
+							<ul class="list-inline" >
+								<li id="ca-edit"><a href="/index.php?title=Networking&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></li>
+								<li id="ca-history"><a href="/index.php?title=Networking&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+							</ul>
+						</li>
+					</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- start the content area -->
+				<div id="content" class="mw-body"><a id="top"></a>
+					<div id="mw-indicators" class="mw-indicators"></div>
+					<div  id="mw-js-message" style="display:none;"></div>
+					<div class ="contentHeader">
+					<div id="siteSub">From KVM</div><div id="jump-to-nav" class="mw-jump">Jump to:<a href="#mw-navigation">navigation</a>, <a href="#p-search">search</a></div>
+				</div>
+				<div id="bodyContent">
+					<!-- body text -->
+
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Configuring_Guest_Networking"><span class="tocnumber">1</span> <span class="toctext">Configuring Guest Networking</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#User_Networking"><span class="tocnumber">1.1</span> <span class="toctext">User Networking</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Private_Virtual_Bridge"><span class="tocnumber">1.2</span> <span class="toctext">Private Virtual Bridge</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Public_Bridge"><span class="tocnumber">1.3</span> <span class="toctext">Public Bridge</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Routing_with_iptables"><span class="tocnumber">1.4</span> <span class="toctext">Routing with iptables</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#VDE"><span class="tocnumber">1.5</span> <span class="toctext">VDE</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Performance"><span class="tocnumber">1.6</span> <span class="toctext">Performance</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Compatibility"><span class="tocnumber">1.7</span> <span class="toctext">Compatibility</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Configuring_Guest_Networking">Configuring Guest Networking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=1" title="Edit section: Configuring Guest Networking">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p>Guest (VM) networking in kvm is the same as in qemu, so it is possible to refer to other documentation about networking in qemu. This page will try to explain how to configure the most frequent types of networking needed.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="User_Networking">User Networking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=2" title="Edit section: User Networking">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Use case:</b>
+</p>
+<ul><li> You want a simple way for your virtual machine to access to the host, to the internet or to resources available on your local network.</li>
+<li> You don't need to access your guest from the network or from another guest.</li>
+<li> You are ready to take a huge performance hit.</li>
+<li> Warning: User networking does not support a number of networking features like ICMP.  Certain applications (like ping) may not function properly.</li></ul>
+<p><br />
+<b>Prerequisites:</b>
+</p>
+<ul><li> You need kvm up and running</li>
+<li> If you don't want to run as root, then the user needs to have rw access to /dev/kvm</li>
+<li> In order for the guest to be able to access the internet or a local network, the host system must be able to access these resources as well</li></ul>
+<p><br />
+<b>Solution:</b>
+</p>
+<ul><li> Simply run your guest without specifying network parameters, which by default will create user-level (a.k.a slirp) networking:</li></ul>
+<pre>qemu-system-x86_64 -hda /path/to/hda.img
+</pre>
+<p><br />
+<b>Notes:</b>
+</p>
+<ul><li> The IP address can be automatically assigned to the guest thanks to the DHCP service integrated in QEMU</li>
+<li> If you run multiple guests on the host, you don't need to specify a different MAC address for each guest</li>
+<li> The default is equivalent to this explicit setup:</li></ul>
+<pre>qemu-system-x86_64 -hda /path/to/hda.img -netdev user,id=user.0 -device e1000,netdev=user.0
+</pre>
+<ul><li> The user.0 identifier above is just to connect the two halves into one. You may use any identifier you wish, such as "n" or "net0".</li>
+<li> Use rtl8139 instead of e1000 to get an rtl8139-based network interface.</li>
+<li> You can still access one specific port on the guest using the "hostfwd" option. This means e.g. if you want to transport a file with scp from host to guest, start the guest with "-device e1000,netdev=user.0 -netdev user,id=user.0,hostfwd=tcp::5555-:22". Now you are forwarding the host port 5555 to the guest port 22. After starting up the guest, you can transport a file with e.g. "scp -P 5555 file.txt root@localhost:/tmp" from host to guest. Or you can also use the other address of the host to connect to.</li></ul>
+<h2><span class="mw-headline" id="Private_Virtual_Bridge">Private Virtual Bridge</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=3" title="Edit section: Private Virtual Bridge">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Use case:</b>
+</p>
+<ul><li> You want to set up a private network between 2 or more virtual machines. This network won't be seen from the other virtual machines nor from the real network.</li></ul>
+<p><b>Prerequisites:</b>
+</p>
+<ul><li> You need kvm up and running</li>
+<li> If you don't want to run as root, then the user needs to have rw access to /dev/kvm</li>
+<li> The following commands must be installed on the host system and executed as root:</li></ul>
+<pre>ip
+brctl (deprecated). Use ip link instead
+tunctl (deprecated). Use ip tuntap and ip link instead
+</pre>
+<p><b>Solution:</b>
+</p>
+<ul><li> You need to create a bridge, e-g:</li></ul>
+<pre># ip link add br0 type bridge
+# brctl addbr br0 (deprecated)
+</pre>
+<ul><li> You need a qemu-ifup script containing the following (run as root):</li></ul>
+<pre>#!/bin/sh
+set -x
+
+switch=br0
+
+if [ -n "$1" ];then
+        # tunctl -u `whoami` -t $1 (use ip tuntap instead!)
+        ip tuntap add $1 mode tap user `whoami`
+        ip link set $1 up
+        sleep 0.5s
+        # brctl addif $switch $1 (use ip link instead!)
+        ip link set $1 master $switch
+        exit 0
+else
+        echo "Error: no interface specified"
+        exit 1
+fi
+</pre>
+<ul><li> Generate a MAC address, either manually or using:</li></ul>
+<pre>#!/bin/bash
+# generate a random mac address for the qemu nic
+printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256))
+</pre>
+<ul><li> Run each guest with the following, replacing $macaddress with the value from the previous step</li></ul>
+<pre>qemu-system-x86_64 -hda /path/to/hda.img -device e1000,netdev=net0,mac=$macaddress -netdev tap,id=net0
+</pre>
+<p><b>Notes:</b>
+</p>
+<ul><li> If you don't want to run qemu-ifup as root, then consider using sudo</li>
+<li> You can either create a system-wide qemu-ifup in /etc/qemu-ifup or use another one. In the latter case, run</li></ul>
+<pre>qemu-system-x86_64 -hda /path/to/hda.img -device e1000,netdev=net0,mac=$macaddress -netdev tap,id=net0,script=/path/to/qemu-ifup
+</pre>
+<ul><li> Each guest on the private virtual network must have a different MAC address</li></ul>
+<h2><span class="mw-headline" id="Public_Bridge">Public Bridge</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=4" title="Edit section: Public Bridge">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>WARNING:</b> The method shown here will not work with all wireless drivers as they might not support bridging.
+</p><p><b>Use case:</b>
+</p>
+<ul><li> You want to assign IP addresses to your virtual machines and make them accessible from your local network</li>
+<li> You also want performance out of your virtual machine</li></ul>
+<p><br />
+<b>Prerequisites:</b>
+</p>
+<ul><li> You need kvm up and running</li>
+<li> If you don't want to run kvm as root, then the user must have rw access to /dev/kvm</li>
+<li> The following commands must be installed on the host system and executed as root:</li></ul>
+<pre>ip
+brctl (deprecated, use ip link instead)
+tunctl (deprecated, use ip tuntap instead)
+</pre>
+<ul><li> Your host system must be able to access the internet or the local network</li></ul>
+<p><br />
+<b>Solution 1: Using Distribution-Specific Scripts</b>
+</p>
+<table border="1">
+<tr>
+<th>RedHat
+</th>
+<th>Debian
+</th>
+<th>SuSE
+</th></tr>
+<tr>
+<td>
+<ul><li> Edit /etc/sysconfig/network-scripts/ifcfg-eth0
+<ul><li> comment out BOOTPROTO</li>
+<li> Add BRIDGE=br0</li></ul></li>
+<li> Create /etc/sysconfig/network-scripts/ifcfg-br0
+<ul><li> The content should be:</li></ul></li></ul>
+<pre>DEVICE=br0
+BOOTPROTO=dhcp
+ONBOOT=yes
+TYPE=Bridge
+</pre>
+</td>
+<td>
+<p>/etc/network/interfaces
+</p>
+<pre># Replace old eth0 config with br0
+auto <strike>eth0</strike> br0
+</pre>
+<pre># Use old eth0 config for br0, plus bridge stuff
+iface br0 inet dhcp
+    bridge_ports    eth0
+    bridge_stp      off
+    bridge_maxwait  0
+    bridge_fd       0
+</pre>
+</td>
+<td>
+<ul><li> Start YaST</li>
+<li> Go to Network Configuration</li>
+<li> Add new device -&gt; Bridge</li>
+<li> Tick your existing network device</li>
+<li> done</li></ul>
+</td></tr></table>
+<ul><li> /etc/init.d/networking restart</li>
+<li> The bridge br0 should get the IP address (either static/dhcp) while the physical eth0 is left without an IP address.</li></ul>
+<p><br />
+<b>VLANs</b>
+</p><p>Please note that the rtl8139 virtual network interface driver does not support VLANs. If you want to use VLANs with your virtual machine, you must use another virtual network interface like virtio. 
+</p><p>When using VLANs on a setup like this and no traffic is getting through to your guest(s), you might want to do:
+</p>
+<pre># cd /proc/sys/net/bridge
+# ls
+bridge-nf-call-arptables  bridge-nf-call-iptables
+bridge-nf-call-ip6tables  bridge-nf-filter-vlan-tagged
+# for f in bridge-nf-*; do echo 0 &gt; $f; done
+</pre>
+<p><br />
+<b>Solution 2: Manual Configuration</b>
+</p>
+<ul><li> You need to create a bridge, e-g:</li></ul>
+<pre># ip link add br0 type bridge
+# brctl addbr br0 (deprecated, use ip link instead!)
+</pre>
+<ul><li> Add one of your physical interface to the bridge, e-g for eth0:</li></ul>
+<pre># ip link set eth0 master br0
+# brctl addif br0 eth0 (deprecated, use ip link instead!)
+</pre>
+<ul><li> You need a qemu-ifup script containing the following (run as root):</li></ul>
+<pre>#!/bin/sh
+set -x
+
+switch=br0
+
+if [ -n "$1" ];then
+        #tunctl -u `whoami` -t $1
+        ip tuntap add $1 mode tap user `whoami`
+        ip link set $1 up
+        sleep 0.5s
+        #brctl addif $switch $1
+        ip link set $1 master $switch
+        exit 0
+else
+        echo "Error: no interface specified"
+        exit 1
+fi
+</pre>
+<ul><li> Generate a MAC address, either manually or using:</li></ul>
+<pre>#!/bin/sh
+# generate a random mac address for the qemu nic
+printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256))
+</pre>
+<ul><li> Run each guest with the following, replacing $macaddress with the value from the previous step</li></ul>
+<pre>qemu-system-x86_64 -hda /path/to/hda.img -device e1000,netdev=net0,mac=$macaddress -netdev tap,id=net0
+</pre>
+<p><br />
+<b>Notes:</b>
+</p>
+<ul><li> If you don't want to run qemu-ifup as root, then consider using sudo</li>
+<li> Each guest on the network must have a different MAC address</li>
+<li> You can either create a system-wide qemu-ifup in /etc/qemu-ifup or use another one. In the latter case, run</li></ul>
+<pre>qemu-system-x86_64 -hda /path/to/hda.img -device e1000,netdev=net0,mac=$macaddress -netdev tap,id=net0,script=/path/to/qemu-ifup
+</pre>
+<h2><span class="mw-headline" id="Routing_with_iptables">Routing with iptables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=5" title="Edit section: Routing with iptables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>With this method, you can connect your guest vm to a tap device in your host. Then you can set iptables rules in your host so that it acts as a router and firewall for your guest.
+</p><p>Routing is done simply by setting the default route on the client to the IP address of the host, allowing IP forwarding, and setting a route to the tap device of the client on the host.
+</p><p><br />
+</p>
+<ul><li>Host-side: Allow IPv4 forwarding and add a route to the guest (could be put in a script, but the route has to be added after the guest has started):</li></ul>
+<pre>sysctl -w net.ipv4.ip_forward=1                 # allow forwarding of IPv4
+route add -host &lt;ip-of-client&gt; dev &lt;tap-device&gt; # add route to the client
+</pre>
+<p><br />
+</p>
+<ul><li>Guest-side: Set the default gateway to the IP address of the host (make sure the host and guest IP addresses are in the same subnet):</li></ul>
+<pre>route add default gw &lt;ip-of-host&gt;
+</pre>
+<p><br />
+</p>
+<ul><li>Note: If the host is not on the same subnet as the guest, then you must manually add the route to the host before you create the default route:</li></ul>
+<pre>route add -host &lt;ip-of-host&gt; dev &lt;network-interface&gt;
+route add default gw &lt;ip-of-host&gt;
+</pre>
+<h2><span class="mw-headline" id="VDE">VDE</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=6" title="Edit section: VDE">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Another option is using VDE (Virtual Distributed Ethernet).
+</p><p>More information will be provided later.
+</p>
+<h2><span class="mw-headline" id="Performance">Performance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=7" title="Edit section: Performance">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Data on benchmarking results should go in here.
+There's now a page dedicated to ideas for improving
+<a href="/page/Networking_Performance" title="Networking Performance">Networking Performance</a>.
+</p><p>Some 10G NIC performance comparisons between VFIO passthrough and virtio are discussed in <a href="/page/VFIO_vs_virtio" title="VFIO vs virtio" class="mw-redirect">VFIO vs virtio</a>.
+</p>
+<h2><span class="mw-headline" id="Compatibility">Compatibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Networking&amp;action=edit&amp;section=8" title="Edit section: Compatibility">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There's another, old and obsolete syntax of specifying network for virtual machines.  Above examples uses -netdev..-device model, old way used -net..-net pairs.  For example,
+</p>
+<pre>-netdev tap,id=net0 -device e1000,netdev=net0,mac=52:54:00:12:34:56
+</pre>
+<p>is about the same as old
+</p>
+<pre>-net tap,vlan=0 -net nic,vlan=0,model=e1000,macaddr=52:54:00:12:34:56
+</pre>
+<p>(note mac =&gt; macaddr parameter change as well; vlan=0 is the default).
+</p><p>Old way used the notion of "VLANs" - these are QEMU VLANS, which has nothing to do with 802.1q VLANs. Qemu VLANs are numbered starting with 0, and it's possible to connect one or more devices (either host side, like -net tap, or guest side, like -net nic) to each VLAN, and, in particular, it's possible to connect more than 2 devices to a VLAN.  Each device in a VLAN gets all traffic received by every device in it.  This model was very confusing for the user (especially when a guest has more than one NIC).
+</p><p>In new model, each host side correspond to just one guest side, forming a pair of devices based on -netdev id=  and -device netdev= parameters.  It is less confusing, it is faster (because it's always 1:1 pair), and it supports more parameters than old -net..-net way.
+</p><p>However, -net..-net is still supported, used widely, and mentioned in lots of various HOWTOs and guides around the world.  It is also a bit shorter and so faster to type.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20181106215023
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.024 seconds
+Real time usage: 0.031 seconds
+Preprocessor visited node count: 30/1000000
+Preprocessor generated node count: 36/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key kvmwiki-kvmwiki_:pcache:idhash:1444-0!*!0!!en!*!* and timestamp 20181106215023 and revision id 173789
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://www.linux-kvm.org/index.php?title=Networking&amp;oldid=173789">https://www.linux-kvm.org/index.php?title=Networking&amp;oldid=173789</a>"</div>
+
+					<!-- end body text -->
+				</div>
+				<!-- category links -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>
+			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- Tools-->
+				<nav class="navbar navbar-default p-tb " id="p-tb"  >
+					<ul class="nav navbar-nav small">
+						<li id="t-whatlinkshere"><a href="/page/Special:WhatLinksHere/Networking" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="/page/Special:RecentChangesLinked/Networking" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+						<li id="t-specialpages"><a href="/page/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+						<li id="t-print"><a href="/index.php?title=Networking&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+						<li id="t-permalink"><a href="/index.php?title=Networking&amp;oldid=173789" title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-info"><a href="/index.php?title=Networking&amp;action=info" title="More information about this page">Page information</a></li>
+						<li id="t-cite"><a href="/index.php?title=Special:CiteThisPage&amp;page=Networking&amp;id=173789" title="Information on how to cite this page">Cite this page</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- footer icons -->
+				<ul class="list-inline pull-right footer-icons " id="footer-icons" >
+					<!-- poweredby -->
+					<li><a href="https://www.openshift.com/"><img src="https://www.openshift.com/images/logos/powered_by_openshift.png" alt="Powered by OpenShift Online" width="88" height="31"/></a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.bootstrap.scripts"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":173});
+} );</script></body>
+</html>
